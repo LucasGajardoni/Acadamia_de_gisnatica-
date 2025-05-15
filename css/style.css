@@ -1,6 +1,6 @@
 /*  
-  Usei display: flex porque tentei position: absolute e não funcionou direito.
-  Com position, os elementos ficavam meio fora do lugar e difícil de alinhar direito.
+  Usei display flex porque tentei position: absolute e não funcionou direito.
+  Com position os elementos ficavam meio fora do lugar e difícil de alinhar direito.
   O flex ajuda a deixar tudo alinhado e organizado sem precisar ficar calculando posição.
 */
 * { 
@@ -54,7 +54,9 @@ header.cima nav ul li a {
   background-size: cover;
   color: white;
   padding: 150px 20px; 
-  text-align: right; 
+  text-align: right;
+  animation: Banner 10s infinite;
+  background-size: cover; 
 }
 
 .banner-conteudo {
@@ -311,6 +313,17 @@ footer p {
   transition: background-color 0.3s;
 }
 
+@keyframes Banner {
+  0% {
+    background-image: url('imagen/bannerprincipal.png');
+  }
+  50% {
+    background-image: url('imagen/bannercerto.webp');
+  }
+  100% {
+    background-image: url('imagen/bannerprincipal.png');
+  }
+}
 
 
 
