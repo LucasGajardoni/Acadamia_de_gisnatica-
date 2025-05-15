@@ -1,7 +1,11 @@
+/*  
+  Usei display: flex porque tentei position: absolute e não funcionou direito.
+  Com position, os elementos ficavam meio fora do lugar e difícil de alinhar direito.
+  O flex ajuda a deixar tudo alinhado e organizado sem precisar ficar calculando posição.
+*/
 * { 
   margin: 0; 
   padding: 0;
-  box-sizing: border-box;
 } 
 
 body {
@@ -14,12 +18,14 @@ body {
 header.cima {
   background-color: #111; 
   color: white; 
-  padding: 3px 0; 
+  padding: 10px 0;
 }
 .menu {
   width: 90%;
   margin: 0 auto;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -29,7 +35,6 @@ header.cima {
 
 header.cima nav {
   margin-left: auto;
-  margin-top: 2%;
 }
 
 header.cima nav ul {
@@ -45,7 +50,7 @@ header.cima nav ul li a {
   top: 5%;
 }
 .banner {
-  background: url('imagen/bannercerto.webp') no-repeat center center;
+  background: url('imagen/bannerprincipal.png') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 150px 20px; 
@@ -121,11 +126,39 @@ h3 {
   margin: 30px 0;
   color: #555;
 }
+.treinadores {
+  background-color: #e6f2ea; /* verde clarinho */
+  padding: 80px 20px;
+}
 
+.treinadores h2 {
+  color: #1b4332;           /* verde mais escuro */
+  font-size: 2.4em;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+.treinadores .bloco {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+}
+
+.treinadores .bloco:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
 .avaliacao {
   text-align: center;
   background-color: #e9ecef;
   padding: 40px 20px;
+}
+.treinadores .bloco img {
+  border-radius: 50%; 
+  height: 180px;
+  width: 180px;
+  margin-bottom: 20px;
+  border: 4px solid #28a745;  /* borda verde */
 }
 
 .avaliacao p {
@@ -142,27 +175,33 @@ h3 {
 .dicas h2 {
   color: #111;
   margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 2.2em;
 }
 
 .dicas-container {
   background-color: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  display: inline-block;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  max-width: 700px;
+  margin: 0 auto;
   text-align: left;
+  font-size: 1.2em;
+  color: #444;
 }
 
 .dicas ul {
   list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .dicas li {
   margin-bottom: 20px;
-  padding-left: 30px;
-  position: relative;
-  font-size: 1.1em;
-  line-height: 1.6;
+  padding-left: 1.5em; 
+  line-height: 1.8;
+  color: #2d6a4f;
 }
 
 footer {
@@ -175,3 +214,106 @@ footer {
 footer p {
   margin: 0;
 }
+
+
+
+
+.pagina-dicas .dicas {
+  background-color: #f0f5f2;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pagina-dicas .dicas h2 {
+  font-size: 2.4em;
+  color: #1b4332;
+  margin-bottom: 30px;
+}
+
+.pagina-dicas .dicas-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  text-align: left;
+  color: #2d6a4f;
+  font-size: 1.2em;
+}
+
+.pagina-dicas .dicas ul {
+  list-style: none;
+  padding-left: 0; 
+}
+
+.pagina-dicas .dicas li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+
+.pagina-dicas .dicas li strong {
+  color: #1b4332;
+}
+
+.pagina-planos .banner-planos {
+  background: url('imagen/bannercerto.webp') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.pagina-planos .planos {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.pagina-planos .blocos {
+  display: flex;
+  gap: 20px;
+  width: 800px;
+  margin: 0 auto; 
+}
+
+.pagina-planos .bloco {
+  background-color: white;
+  width: 250px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pagina-planos .btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* animaçao aqui */
+@keyframes mudaCor {
+  0% { background-color: #28a745; 
+  }
+  50% { background-color: #218838; 
+  }
+  100% { background-color: #28a745; 
+  }
+}
+
+
+.pagina-planos .btn {
+  animation: mudaCor 3s infinite;
+  transition: background-color 0.3s;
+}
+
+
+
+
+
+
+
